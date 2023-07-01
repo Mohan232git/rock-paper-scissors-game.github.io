@@ -12,6 +12,7 @@ body {
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
+    
 }
 
 .head-wrapper {
@@ -23,12 +24,13 @@ body {
     border: 1px solid hsl(217, 16%, 45%);
     max-width: 70%;
     border-radius: 10px;
-    min-width: 200px;
+    min-width: 250px;
     
 }
 
 .head-wrapper img {
-    width: 70px;
+    min-width:80px;
+    max-width: 30%;
 }
 
 .score {
@@ -54,16 +56,81 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 180px;
-    border: 1px solid red;
-    margin: 50px auto;
+    width:300px;
+    margin: 100px auto;
+    height: auto;
+    position: relative;
+    padding: 30px 0px ;
 }
-.rock img,
-.paper img,
-.scissors img{
-    width: 50px;
-    
+.container::after {
+    content:"";
+    width: 43%;
+    height: 68%;
+    background-image: url(images/bg-triangle.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    top: 50px;
+}
+
+.paper img {
+    width: 40px;
+}
+.scissors img {
+    width: 40px;
+}
+
+
+.scissors{
+    margin-left: 32px;
+    text-align: center;
+    padding:1em;
+    border-radius: 100%;
+    background-color: white;
+    outline: 10px solid  rgb(211, 187, 32);
+
+}
+.paper {
+    margin-right: 40px;
+    margin-bottom: 0px;
+    text-align: center;
+    padding:20px 22px;
+    border-radius: 100%;
+    background-color: white;
+    outline: 10px solid rgb(75, 112, 247);
 }
 .rock {
-    margin-right: 70px;
+    margin-top: 36px;
+    text-align: center;
+    padding: 1em ;
+    border-radius: 100%;
+    background-color: white;
+    outline: 10px solid rgb(226, 77, 77);
+}
+.paper:hover {
+    transform:translateX(5px);
+}
+.scissors:hover {
+    transform:translateX(-5px);
+}
+.rock:hover {
+    transform:translateY(-5px);
+}
+
+.btn {
+    margin: 120px auto;
+    text-align: center;
+    margin-bottom: 0;
+}
+.btn button{
+    padding: 10px 30px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
 }
