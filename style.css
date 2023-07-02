@@ -61,6 +61,7 @@ body {
     height: auto;
     position: relative;
     padding: 30px 0px ;
+    display: none;
 }
 .container::after {
     content:"";
@@ -134,3 +135,54 @@ body {
     letter-spacing: 3px;
     font-weight: 700;
 }
+
+.compete {
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns:repeat(2 ,1fr);
+    grid-template-areas:
+     "handpicked genarated-hand"
+     " result result";
+    gap: 30px;
+    width: 600px;
+    border: 1px solid red;
+    padding: 20px 30px;
+    text-align: center
+    
+}
+.handpicked{
+    grid-area: 'handpicked';
+}
+.generated-hand{
+    grid-area: 'genarated-hand';
+}
+.handpicked h3,
+.generated-hand h3 {
+    margin: 20px;
+    font-size: 1em;
+}
+
+.generated-hand img {
+    border: 10px solid green;
+    padding: 10px;
+    border-radius:50% ;
+    width:fit-content;
+}
+
+.result {
+    margin: 40px 0;
+    grid-area: "result";
+}
+.result h1 {
+    margin: 10px 0;
+}
+.result button {
+    padding: 10px 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 20px 0;
+    border-radius: 10px;
+    color: hsl(229, 25%, 31%);
+    border: none;
+}
+

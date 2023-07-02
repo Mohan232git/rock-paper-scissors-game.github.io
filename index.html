@@ -28,22 +28,40 @@
           <img src="images/logo.svg" alt="">
           <div class="score">
             <p>score</p>
-            <span>10</span>
+            <span>0</span>
           </div>
       </div>
 
       <div class="container">
-         
-         <div class="paper">
-          <img src="images/icon-paper.svg" alt="">
+         <div class="paper" id="hands" >
+          <img src="images/icon-paper.svg" alt="" onclick="handpicked('.paper')">
          </div>
          
-         <div class="scissors">
-          <img src="images/icon-scissors.svg" alt="">
+         <div class="scissors" id="hands">
+          <img src="images/icon-scissors.svg" alt="" onclick="handpicked('.scissors')">
          </div>
-         <div class="rock">
-          <img src="images/icon-rock.svg" alt="">
+
+
+         <div class="rock" id="hands">
+          <img src="images/icon-rock.svg" alt="" onclick="handpicked('.rock')">
          </div>
+      </div>
+
+
+      <div class="compete">
+          <div class="handpicked">
+            <h3>YOU PICKED</h3>
+            <img src="images/icon-paper.svg" alt="">
+          </div>
+          <div class="result">
+              <h1>YOU LOSE</h1>
+              <button>play again</button>
+          </div>
+
+          <div class="generated-hand">
+              <h3>THE MOUSE PICKED</h3>
+              <img src="images/icon-lizard.svg" alt="">
+          </div>
       </div>
 
 
@@ -51,5 +69,12 @@
         <button>Rules</button>
       </div>
 
+
+
+
+
+
+
+      <script src="index.js"></script>
 </body>
 </html>
