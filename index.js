@@ -1,17 +1,15 @@
 function handpicked(hand){
     const container = document.querySelector(".container");
     const competediv = document.querySelector(".compete");
+    let generatedhand = document.querySelector('.generated-hand');
+    let generatedimg = generatedhand.querySelector('img');
     let newImage = document.getElementById("newImage");
-    console.log(container);
     const handpicked = document.querySelector(hand);
-     let selectedimg =handpicked.querySelector('img')
-    console.log(handpicked)
+    let selectedimg =handpicked.querySelector('img')
     container.style.display="none";
     competediv.style.display="grid";
-    console.log(newImage)
     newImage.src = selectedimg.src;
-    let borderstyle = handpicked.style.outlineColor;
-    console.log(borderstyle)
+    
 }
 
 function playagain(){
@@ -20,4 +18,15 @@ function playagain(){
         competediv.style.display="none";
         container.style.display="flex";
 
+}
+
+
+function closerules() {
+     const rulescontainer = document.querySelector('.Rules-container');
+      rulescontainer.style.display ='none'
+}
+
+function openrules(){
+    const rulescontainer = document.querySelector('.Rules-container');
+    rulescontainer.style.display='block'
 }
