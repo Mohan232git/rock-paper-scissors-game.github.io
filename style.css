@@ -73,7 +73,7 @@ img {
     position: relative;
     padding: 30px 0px ;
     /* display: none; */
- 
+    
    
 }
 .container::after {
@@ -225,16 +225,14 @@ img {
 }
 
 .Rules-container {
-    min-width:20%;
-    max-width: 800px;
+    min-width: 60%;
     margin: 20px auto;
     border-radius: 10px;
-    
     margin-left: auto;
     margin-right: auto;
-  
     display: grid;
     place-items: center;
+    position: absolute;
    
 }
 
@@ -258,14 +256,18 @@ img {
 
 .rules-wapper {
     padding: 20px;
-    margin: 10px;
+    margin:0 20px;
     background-color: white;
     border-radius: 10px;
-    width: 100%;
+    min-width: 300px;
     height: 100%;
+   margin: 0 auto;
 
 }
 .rules {
     margin: 40px 0;
     text-align: center;
+}
+.rules img{
+    width:100% ;
 }
