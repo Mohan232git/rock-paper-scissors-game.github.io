@@ -17,8 +17,9 @@ body {
     background-repeat: no-repeat;
     width: 100%;
     min-height: 100vh;
-   
     position: relative;
+   
+    
     
 }
 
@@ -27,7 +28,7 @@ img {
 }
 
 .head-wrapper {
-    margin: 30px auto;
+    margin: 0 auto;
     padding:10px 20px ;
     display: flex;
     align-items: center;
@@ -35,8 +36,7 @@ img {
     border: 1px solid hsl(217, 16%, 45%);
     max-width: 70%;
     border-radius: 10px;
-    min-width: 250px;
-    
+    min-width: 300px;
 }
 
 .head-wrapper img {
@@ -164,9 +164,10 @@ img {
     grid-template-rows:repeat(2,0.5fr);
     gap: 40px;
     margin-bottom: 0;
+    margin: 40px auto;
     min-width: 300px;
     max-width: 70%;
-    border: 1px solid red;
+    
     padding: 20px 10px;
     text-align: center; 
     align-items: center;
@@ -225,49 +226,115 @@ img {
 }
 
 .Rules-container {
-    min-width: 60%;
+    min-width: 100%;
     margin: 20px auto;
+    height: 100vh;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
-    display: grid;
     place-items: center;
     position: absolute;
-   
+    top: 0;
+    margin-top: 0;  
+    display: none;
+    
 }
+
 
 .Rules-container header h2 {
     color:var(--DarkText) ;
     font-size:2em;
     text-transform: uppercase;
     letter-spacing: 1.2px;
+    grid-area: 'header';
+    margin: 20px 0;
 }
 
 .Rules-container header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+    height: 100vh;
+    margin: 0 auto;
+    padding-top:100px ;
+    padding-bottom:80px ;
+    
 }
 
-.Rules-container header img {
+.cross{
     width: 20px;
     height: 20px;
+    margin: 90px;
 }
 
 .rules-wapper {
-    padding: 20px;
-    margin:0 20px;
     background-color: white;
     border-radius: 10px;
     min-width: 300px;
     height: 100%;
-   margin: 0 auto;
 
 }
 .rules {
-    margin: 40px 0;
-    text-align: center;
+    width: 300px;
+    height: 200px;
 }
-.rules img{
-    width:100% ;
+.rules img {
+    width: 100%;
+}
+
+
+
+/* js styles */
+
+
+
+@media(min-width:700px){
+        .Rules-container{
+            position: absolute;
+            min-width: 400px;
+            margin: 200px auto;
+            height: fit-content;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .rules-wapper {
+            position: relative;
+        }
+        .rules-wapper header {
+            display: block;
+            grid-template-columns:repeat(3,1fr);
+            margin: 0;
+            padding: 0;
+            width: fit-content;
+            height: 500px;
+            margin: 0 auto;
+            place-items:start ;
+            
+        }
+        .rules-wapper header h2 {
+            margin: 20px 20px;
+            position: absolute;
+            left: 20px;
+        }
+        .cross {
+            margin: 20px;
+            margin: 20px auto;
+            position: absolute;
+            right: 30px;
+            top: 10px;
+            
+
+        }
+        .rules img{
+            width: 100%;
+        }
+
+        .rules {
+            position: absolute;
+            bottom: 160px;
+            left: 50px;
+        }
 }

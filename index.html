@@ -46,17 +46,6 @@
           <img src="images/icon-rock.svg" alt="" onclick="handpicked('.rock')">
          </div>
 
-         <div class="Rules-container">
-          <div class="rules-wapper">
-            <header>
-            <h2>Rules</h2>
-            <img src="images/icon-close.svg" alt="" onclick="closerules()">
-          </header>
-          <div class="rules">
-            <img src="images/image-rules.svg" alt="">
-          </div>
-        
-        </div>
           
         </div>
   
@@ -66,7 +55,10 @@
       <div class="compete">
           <div class="handpicked">
             <h3>YOU PICKED</h3>
-            <img src="images/icon-paper.svg" id="newImage" alt="">
+            <div class="picked-div">
+              <img src="images/icon-paper.svg" id="newImage" alt="">
+            </div>
+            
           </div>
           <div class="result">
               <h1>YOU LOSE</h1>
@@ -78,15 +70,25 @@
               <img src="images/icon-lizard.svg" alt="">
           </div>
       </div>
-
-     
-
-      <div class="btn">
-        <button onclick="openrules()">Rules</button>
-      </div>
-
-
+   
       
+      <div class="Rules-container">
+        <div class="rules-wapper">
+          <header>
+          <h2>Rules</h2>
+          <div class="rules">
+            <img src="images/image-rules.svg" alt="">
+          </div>
+          <img src="images/icon-close.svg" class="cross" alt="" onclick="closerules()">
+        </header>
+        
+      
+      </div>
+    </div> 
+
+    <div class="btn">
+      <button onclick="openrules()">Rules</button>
+    </div>
 
 
 
