@@ -45,3 +45,10 @@ function openrules(){
     rulescontainer.style.background='red'
   
 }
+
+
+let rulescontainer = document.querySelector('.advanced-rules-wapper');
+let cross = document.querySelector('.ad-cross')
+cross.addEventListener('click',()=>{
+    rulescontainer.style.display='none'
+})
