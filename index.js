@@ -18,9 +18,10 @@ function handpicked(hand){
 function playagain(){
     const container = document.querySelector(".container");
     const competediv = document.querySelector(".compete");
-    
-        competediv.style.display="none";
-        container.style.display="flex";
+    const btn = document.querySelector('.changebtn')
+    competediv.style.display="none";
+    container.style.display="flex";
+       
       
 
 }
@@ -38,12 +39,19 @@ function closerules() {
 
 function openrules(){
     const rulescontainer = document.querySelector('.Rules-container');
-    
+    const advancedgame = document.querySelector('.advanced');
+    const advancedrules = document.querySelector('.advanced-rules-wapper');
     const rulesbtn = document.querySelector('.btn')
-    rulesbtn.style.display='none'
-    rulescontainer.style.display='inline-block';
-    rulescontainer.style.background='red'
-  
+    const label = document.querySelector('.changebtn');
+    const advancedlabel = 'Adcanced'.toUpperCase()
+    const intermediatelabel = 'intermediate'.toUpperCase()
+     if(label.innerText==advancedlabel){
+        advancedrules.style.display='block' ;
+     }
+     else {
+        rulesbtn.style.display='none';
+        rulescontainer.style.display='inline-block';
+     }
 }
 
 
@@ -52,3 +60,27 @@ let cross = document.querySelector('.ad-cross')
 cross.addEventListener('click',()=>{
     rulescontainer.style.display='none'
 })
+
+function changelevel(){
+    let intermediate = document.querySelector('.intermediate')
+    let advanced = document.querySelector('.advanced');
+
+    let btn = document.querySelector('.changebtn')
+    const advancedlabel = 'Adcanced'.toUpperCase()
+    const intermediatelabel = 'intermediate'.toUpperCase()
+    
+    
+     if(btn.innerText===advancedlabel){
+        
+        advanced.style.display='none';
+        intermediate.style.display='flex';
+        btn.innerText = intermediatelabel;
+     }
+     else{
+        advanced.style.display='grid';
+        intermediate.style.display='none';
+        btn.innerText=advancedlabel;
+        
+     }
+
+}
