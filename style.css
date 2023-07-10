@@ -111,7 +111,6 @@ img {
 .paper {
     margin-right: 55px;
     min-width: 40px;
-    
     margin-bottom: 10px;
     text-align: center;
     padding:20px 22px;
@@ -313,18 +312,24 @@ img {
     margin: 40px auto;
     min-width: 300px;
     max-width: 70%;
-    
     padding: 20px 10px;
     text-align: center; 
     align-items: center;
     display: none;
     
 }
+
+.picked-div {
+    width: 100px;
+    margin: 30px auto;
+}
 .handpicked img{
         padding: 20px;
-        border: 10px solid blue;
+        outline: 10px solid rgb(72, 132, 229);
         border-radius: 50%;
         background-color: white;
+        width: 110px;
+        
         
 }
 
@@ -339,13 +344,20 @@ img {
 }
 
 .generated-hand img {
-    border: 10px solid green;
+    border: 10px solid white;
+    outline: 10px solid green;
     padding: 20px;
     border-radius:50% ;
     width:fit-content;
     background-color: white;
     
 }
+#winner {
+    border-color:rgb(161, 233, 235) ;
+    outline-color:rgba(0, 111, 149, 0.3) ;
+    transition: 0.5s;
+}
+
 
 .result {
     grid-row: 2;
@@ -467,6 +479,8 @@ img {
 }
 
 /* js styles */
+
+
 
 
 

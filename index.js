@@ -1,18 +1,21 @@
+
+let randompick=null ;
+let score = 0;
+
 function handpicked(hand){
     const container = document.querySelector(".container");
     const competediv = document.querySelector(".compete");
-    let generatedhand = document.querySelector('.generated-hand');
-    let generatedimg = generatedhand.querySelector('img');
-    let newImage = document.getElementById("newImage");
+    let newImage = document.querySelector(".newImage");
     let pickedDiv = document.querySelector('.picked-div');
     const handpicked = document.querySelector(hand);
-    let selectedimg =handpicked.querySelector('img')
-
+    let selectedimg =handpicked.querySelector('img');
+    let displayscore = document.querySelector('.display-score');
     container.style.display="none";
     competediv.style.display="grid"; 
     pickedDiv.innerHTML = handpicked.innerHTML;
-    pickedDiv.classList.add(hand)
-    console.log(pickedDiv)
+    intermediate_generate_Hand();
+    result(hand , intermediate_generate_Hand())
+    displayscore.innerText=score;
 }
 
 function playagain(){
@@ -84,3 +87,60 @@ function changelevel(){
      }
 
 }
+
+
+const intermediate_generate_Hand = () =>{
+    const intermediate_List = ['rock','paper','scissors']
+    let randompick = intermediate_List[Math.floor((Math.random()*3))] ;
+    let handreplace = document.querySelector('.random-hand');
+    handreplace.src='images/icon-'+randompick+'.svg';
+    console.log(randompick)
+    return randompick
+}
+
+
+const result=( userpicked , computerpicked) =>{
+    const user = userpicked;
+    const computer = computerpicked;
+    let displayresult = document.querySelector('.display-result');
+    console.log(userpicked,computerpicked)
+    if(user=='.scissors'&&computer=='paper'){
+        displayresult.innerText='you win'.toUpperCase()
+        score++;
+    }
+    if(user=='.paper'&&computer=='rock'){
+        displayresult.innerText='you win'.toUpperCase()
+        score++
+    }
+    if(user=='.scissors'&&computer=='rock'){
+        displayresult.innerText='you lose'.toUpperCase()
+        
+    }
+    if(user=='.rock'&&computer=='scissors'){
+        displayresult.innerText='you win'.toUpperCase()
+        score++
+    }
+    if(user=='.rock'&&computer=='paper'){
+        displayresult.innerText='you lose'.toUpperCase()
+       
+    }
+    if(user=='.paper'&&computer=='scissors'){
+        displayresult.innerText='you lose'.toUpperCase()
+        
+    }
+    if(user=='.scissors'&&computer=='scissors'){
+        displayresult.innerText='tie'.toUpperCase()
+       
+    }
+    
+    if(user=='.paper'&&computer=='paper'){
+        displayresult.innerText='tie'.toUpperCase()
+        
+    }
+    if(user=='.rock'&&computer=='rock'){
+        displayresult.innerText='tie'.toUpperCase()
+        
+    }
+    
+}
+
