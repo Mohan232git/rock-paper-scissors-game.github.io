@@ -323,7 +323,8 @@ img {
     width: 100px;
     margin: 30px auto;
 }
-.handpicked img{
+.picked-div img{
+
         padding: 20px;
         outline: 10px solid rgb(72, 132, 229);
         border-radius: 50%;
@@ -332,7 +333,10 @@ img {
         
         
 }
-
+.random{
+    width: 100px;
+    margin: 30px auto;
+}
 .handpicked h3 {
     margin-top:10px ;
 }
@@ -352,11 +356,7 @@ img {
     background-color: white;
     
 }
-#winner {
-    border-color:rgb(161, 233, 235) ;
-    outline-color:rgba(0, 111, 149, 0.3) ;
-    transition: 0.5s;
-}
+
 
 
 .result {
@@ -480,6 +480,12 @@ img {
 
 /* js styles */
 
+
+#winner {
+    border-color:rgb(161, 233, 235) ;
+    outline-color:rgba(0, 111, 149, 0.3) ;
+    transition: 0.5s;
+}
 
 
 
