@@ -488,6 +488,15 @@ img {
 }
 
 
+@media (max-width:400px){
+    .generated-hand h3 {
+        margin: 0;
+    }
+    .handpicked h3 {
+        margin: 20px auto;
+       
+    }
+}
 
 
 @media(min-width:700px){
