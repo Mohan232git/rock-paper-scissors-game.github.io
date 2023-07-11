@@ -51,24 +51,28 @@
 
          <div class="advanced">
           <div class="advanced-paper" id="hands" >
-            <img src="images/icon-paper.svg" alt="" onclick="handpicked('paper')">
+            <img src="images/icon-paper.svg" onclick="handpicked('.paper')" alt="">
           </div>
           
           <div class="advanced-scissors" id="hands">
-            <img src="images/icon-scissors.svg" alt="" onclick="handpicked('scissors')">
+            <img src="images/icon-scissors.svg"  onclick="handpicked('.scissors')" alt="">
           </div>
   
   
           <div class="advanced-rock" id="hands">
-            <img src="images/icon-rock.svg" alt="" onclick="handpicked('rock')">
+            <img src="images/icon-rock.svg"  onclick="handpicked('.rock')" alt="">
           </div>
 
           <div class="lizard">
-            <img src="images/icon-lizard.svg" alt="">
+            <img src="images/icon-lizard.svg"  onclick="handpicked('.lizard')" alt="">
           </div>
+
           <div class="spock">
-            <img src="images/icon-spock.svg" alt="">
+            <img src="images/icon-spock.svg"  onclick="handpicked('.spock')" alt="">
           </div>
+
+
+          
          </div>
           
         </div>
@@ -77,25 +81,34 @@
 
 
       <div class="compete">
-          <div class="handpicked">
+
+
+        <div class="hand-wapper"><div class="handpicked">
             <h3>YOU PICKED</h3>
             <div class="picked-div">
-              <img src="images/icon-paper.svg" id="winner" alt="">
+              <img src="images/icon-paper.svg" alt="">
             </div>
-            
           </div>
+          <div class="generated-hand ">
+              <h3>THE MOUSE PICKED</h3>
+              <div class="random">
+                <img src="images/icon-lizard.svg" class="random-hand" id="winner" alt="">
+              </div>
+          </div></div>
+
+        
+          
+          
+
+
+
           <div class="result">
               <h1 class="display-result">YOU LOSE</h1>
               <button onclick="playagain()">play again</button>
           </div>
 
-          <div class="generated-hand ">
-              <h3>THE MOUSE PICKED</h3>
-              <div class="random">
-                <img src="images/icon-lizard.svg" class="random-hand"  alt="">
-              </div>
-          </div>
-      </div>
+        </div>
+      
    
       
       <div class="Rules-container">
@@ -119,8 +132,8 @@
       </header>
     </div> 
     <div class="btn">
-      <button onclick="changelevel()" class="changebtn">advanced</button>
-      <button onclick="openrules()">Rules</button>
+      <button onclick="changelevel()" class="changebtn">intermediate</button>
+      <button onclick="openrules()" class="rules-btn">Rules</button>
     </div>
 
 

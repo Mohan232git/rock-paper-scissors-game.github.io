@@ -8,14 +8,19 @@ function handpicked(hand){
     let newImage = document.querySelector(".newImage");
     let pickedDiv = document.querySelector('.picked-div');
     const handpicked = document.querySelector(hand);
-    let selectedimg =handpicked.querySelector('img');
     let displayscore = document.querySelector('.display-score');
+    const checkbtn = document.querySelector('.changebtn').innerText;
     container.style.display="none";
-    competediv.style.display="grid"; 
+    competediv.style.display="block"; 
     pickedDiv.innerHTML = handpicked.innerHTML;
-    intermediate_generate_Hand();
-    result(hand , intermediate_generate_Hand())
+    pickedDiv.setAttribute( 'id' ,'winner')
+    if(checkbtn=='INTERMEDIATE')result(hand,intermediate_generate_Hand());
+        
+    if(checkbtn=='ADCANCED')result(hand,advanced_generate_hand());
+        
     displayscore.innerText=score;
+    setoutline();
+    set_outline_to_generated_hand()
 }
 
 function playagain(){
@@ -28,6 +33,20 @@ function playagain(){
       
 
 }
+const setoutline = () => {
+    let pickedDiv = document.querySelector('.picked-div');
+    let img = pickedDiv.querySelector('img');
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    img.style.outlineColor = "#" + randomColor;
+   
+  }
+const set_outline_to_generated_hand = () => {
+    let random = document.querySelector('.random');
+    let img = random.querySelector('img');
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    img.style.outlineColor = "#" + randomColor;
+   
+  }
 
 
 function closerules() {
@@ -50,6 +69,7 @@ function openrules(){
     const intermediatelabel = 'intermediate'.toUpperCase()
      if(label.innerText==advancedlabel){
         advancedrules.style.display='block' ;
+        rulesbtn.style.display='none'
      }
      else {
         rulesbtn.style.display='none';
@@ -61,7 +81,9 @@ function openrules(){
 let rulescontainer = document.querySelector('.advanced-rules-wapper');
 let cross = document.querySelector('.ad-cross')
 cross.addEventListener('click',()=>{
-    rulescontainer.style.display='none'
+    let btn = document.querySelector('.btn')
+    rulescontainer.style.display='none';
+    btn.style.display = 'block'
 })
 
 function changelevel(){
@@ -94,9 +116,20 @@ const intermediate_generate_Hand = () =>{
     let randompick = intermediate_List[Math.floor((Math.random()*3))] ;
     let handreplace = document.querySelector('.random-hand');
     handreplace.src='images/icon-'+randompick+'.svg';
-    console.log(randompick)
     return randompick
 }
+
+const advanced_generate_hand = ()=>{
+    let handreplace = document.querySelector('.random-hand');
+    const advanced_list =['rock','paper','scissors','lizard','spock']
+    let randompick =advanced_list[Math.floor(Math.random()*advanced_list.length)];
+    handreplace.src ='images/icon-'+randompick+'.svg';
+    console.log(handreplace)
+    return randompick;
+    
+}
+
+
 
 
 const result=( userpicked , computerpicked) =>{
@@ -130,7 +163,6 @@ const result=( userpicked , computerpicked) =>{
     }
     if(user=='.scissors'&&computer=='scissors'){
         displayresult.innerText='tie'.toUpperCase()
-       
     }
     
     if(user=='.paper'&&computer=='paper'){
@@ -141,6 +173,74 @@ const result=( userpicked , computerpicked) =>{
         displayresult.innerText='tie'.toUpperCase()
         
     }
+
+    /* Advanced results */
+    if(user=='.rock'&&computer=='lizard'){
+        displayresult.innerText='you win'.toUpperCase()
+        score++
+    }
+    if(user=='.paper'&&computer=='spock'){
+        displayresult.innerText='you win'.toUpperCase()
+        score++
+    }
+    if(user=='.lizard'&&computer=='spock'){
+        displayresult.innerText='you win'.toUpperCase()
+        score++
+    }
+    if(user=='.spock'&&computer=='scissors'){
+        displayresult.innerText='you win'.toUpperCase()
+        score++
+    }
+    if(user=='.scissors'&&computer=='lizard'){
+        displayresult.innerText='you win'.toUpperCase()
+        score++
+    }
+    if(user=='.lizard'&&computer=='paper'){
+        displayresult.innerText='you win'.toUpperCase()
+        score++
+    }
+    if(user=='.spock'&&computer=='rock'){
+        displayresult.innerText='you win'.toUpperCase()
+        score++
+    }
+
+
+    if(user=='.lizard'&&computer=='lizard'){
+        displayresult.innerText='tie'.toUpperCase()
+       
+    }
+    if(user=='.spock'&&computer=='spock'){
+        displayresult.innerText='tie'.toUpperCase()
+        
+    }
+    
+
+    if(user=='.lizard'&&computer=='rock'){
+        displayresult.innerText='you lose'.toUpperCase()
+        
+    }
+    if(user=='.scissors'&&computer=='spock'){
+        displayresult.innerText='you lose'.toUpperCase()
+        
+    }
+    if(user=='.spock'&&computer=='paper'){
+        displayresult.innerText='you lose'.toUpperCase()
+        
+    }
+    if(user=='.spock'&&computer=='lizard'){
+        displayresult.innerText='you lose'.toUpperCase()
+        
+    }
+    if(user=='.rock'&&computer=='spock'){
+        displayresult.innerText='you lose'.toUpperCase()
+        
+    }
+    if(user=='.lizard'&&computer=='scissors'){
+        displayresult.innerText='you lose'.toUpperCase()
+        
+    }
+
+   
     
 }
 
