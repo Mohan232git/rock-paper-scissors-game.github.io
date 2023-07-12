@@ -372,8 +372,8 @@ img {
     border-radius:50% ;
     width:fit-content;
     background-color: white;
-    padding-right:30px ;
-    padding-left:30px ;
+    /* padding-right:30px ;
+    padding-left:30px ; */
 }
 
 
@@ -524,6 +524,10 @@ img {
         margin: 20px auto;
        
     } */
+
+    .head-wrapper {
+        margin-bottom:50px ;
+    }
     
 }
 
