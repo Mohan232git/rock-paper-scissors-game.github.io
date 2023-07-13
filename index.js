@@ -18,6 +18,10 @@ function handpicked(hand){
         
     if(checkbtn=='ADCANCED')result(hand,advanced_generate_hand());
         
+    if(hand==".rock"){
+        pickedDiv.querySelector('img').style.padding='30px';
+    }
+    if(hand=='.lizard') pickedDiv.querySelector('img').style.padding='25px';
     displayscore.innerText=score;
     setoutline();
     set_outline_to_generated_hand()
