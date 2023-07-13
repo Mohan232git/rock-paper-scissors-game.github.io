@@ -56,17 +56,19 @@ const set_outline_to_generated_hand = () => {
 function closerules() {
      const rulescontainer = document.querySelector('.Rules-container');
      const rulesbtn = document.querySelector('.btn')
-     
+     const body = document.querySelector('body');
       rulescontainer.style.display ='none';
       rulesbtn.style.display='block'
-      
+      body.classList.remove('active') ;
+      body.style.webkitFilter='blur(0px)'
 
 }
 
-function openrules(){
-    const rulescontainer = document.querySelector('.Rules-container');
+ function openrules(){
+     const rulescontainer = document.querySelector('.Rules-container');
     const advancedgame = document.querySelector('.advanced');
     const advancedrules = document.querySelector('.advanced-rules-wapper');
+    const body = document.querySelector('body');
     const rulesbtn = document.querySelector('.btn')
     const label = document.querySelector('.changebtn');
     const advancedlabel = 'Adcanced'.toUpperCase()
@@ -78,16 +80,26 @@ function openrules(){
      else {
         rulesbtn.style.display='none';
         rulescontainer.style.display='inline-block';
-     }
-}
+     } 
+     /* body.classList.add('active') ;
+     body.style.zIndex='-999999'; */
+     /* body.style.webkitFilter='blur(10px)'
+     rulescontainer.style.zIndex='1'
+     rulescontainer.style.opacity='1'; */
+
+     /* const dialog  = document.querySelector('#dialog');
+     dialog.show() ; */
+} 
 
 
 let rulescontainer = document.querySelector('.advanced-rules-wapper');
 let cross = document.querySelector('.ad-cross')
 cross.addEventListener('click',()=>{
     let btn = document.querySelector('.btn')
+    
     rulescontainer.style.display='none';
-    btn.style.display = 'block'
+    btn.style.display = 'block';
+    
 })
 
 function changelevel(){
@@ -120,8 +132,7 @@ const intermediate_generate_Hand = () =>{
     let randompick = intermediate_List[Math.floor((Math.random()*3))] ;
     let handreplace = document.querySelector('.random-hand');
     handreplace.src='images/icon-'+randompick+'.svg';
-    return randompick
-}
+    return randompick }
 
 const advanced_generate_hand = ()=>{
     let handreplace = document.querySelector('.random-hand');
@@ -248,3 +259,8 @@ const result=( userpicked , computerpicked) =>{
     
 }
 
+
+
+const toggle=()=>{
+    let 
+}
