@@ -59,8 +59,8 @@ function closerules() {
      const body = document.querySelector('body');
       rulescontainer.style.display ='none';
       rulesbtn.style.display='block'
-      body.classList.remove('active') ;
-      body.style.webkitFilter='blur(0px)'
+      /* body.classList.remove('active') ;
+      body.style.webkitFilter='blur(0px)' */
 
 }
 
